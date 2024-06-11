@@ -1,10 +1,15 @@
 import sys
+import os
 from Adafruit_IO import MQTTClient
-from Hardware_Test import *
+# from Hardware_Test import *
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 AIO_FEED_IDs = ["nutnhan1", "nutnhan2"]
-AIO_USERNAME = "Khoa_hoc0186"
-AIO_KEY = "aio_eAxn91nizbrglWbiqMNcCYsukSPV"
+AIO_USERNAME = os.getenv("ADAFRUIT_IO_USERNAME")
+AIO_KEY = os.getenv("ADAFRUIT_IO_KEY")
 
 def connected(client):
     print("Ket noi thanh cong ...")
@@ -30,7 +35,8 @@ client.connect()
 client.loop_background()
 
 while True:
-    print("Do am: ", readMoisture(client), "%")
-    time.sleep(1)
-    print("Nhiet Do: ", readTemperature(client), "oC")
-    time.sleep(1)
+    # print("Do am: ", readMoisture(client), "%")
+    # time.sleep(1)
+    # print("Nhiet Do: ", readTemperature(client), "oC")
+    # time.sleep(1)
+    pass
