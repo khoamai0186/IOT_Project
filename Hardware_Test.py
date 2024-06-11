@@ -47,7 +47,7 @@ def readTemperature(client):
     ser.write(soil_temperature)
     time.sleep(1)
     client.publish("temp", serial_read_data(ser))
-    print("Nhiet Do: ", readTemperature(client), "oC")
+    print("Nhiet Do: ", serial_read_data(ser), "oC")
 
 soil_moisture = [10, 3, 0, 7, 0, 1, 52, 176]
 def readMoisture(client):
