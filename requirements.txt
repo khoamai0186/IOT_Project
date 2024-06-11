@@ -1,4 +1,4 @@
-adafruit-io
+adafruit-io==2.7.1
 python-dotenv
 paho-mqtt==1.6.1
 pyserial
