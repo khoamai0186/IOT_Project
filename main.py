@@ -1,7 +1,7 @@
 import sys
 import os
 from Adafruit_IO import MQTTClient
-from Hardware_Test import *
+# from Hardware_Test import *
 from dotenv import load_dotenv
 
 
@@ -35,7 +35,8 @@ client.connect()
 client.loop_background()
 
 while True:
-    readMoisture(client)
-    time.sleep(1)
-    readTemperature(client)
-    time.sleep(1)
+    # readMoisture(client)
+    # time.sleep(1)
+    # readTemperature(client)
+    # time.sleep(1)
+    pass
