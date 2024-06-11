@@ -1,5 +1,6 @@
 import sys
 from Adafruit_IO import MQTTClient
+from Hardware_Test import *
 
 AIO_FEED_IDs = ["nutnhan1", "nutnhan2"]
 AIO_USERNAME = "Khoa_hoc0186"
@@ -29,4 +30,7 @@ client.connect()
 client.loop_background()
 
 while True:
-    pass
+    print("Do am: ", readMoisture(client), "%")
+    time.sleep(1)
+    print("Nhiet Do: ", readTemperature(client), "oC")
+    time.sleep(1)

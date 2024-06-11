@@ -42,25 +42,23 @@ def serial_read_data(ser):
 
 
 soil_temperature =[10, 3, 0, 6, 0, 1, 101, 112]
-def readTemperature():
+def readTemperature(client):
     serial_read_data(ser)
     ser.write(soil_temperature)
     time.sleep(1)
+    client.publish("temp", serial_read_data(ser))
     return serial_read_data(ser)
 
 soil_moisture = [10, 3, 0, 7, 0, 1, 52, 176]
-def readMoisture():
+def readMoisture(client):
     serial_read_data(ser)
     ser.write(soil_moisture)
     time.sleep(1)
+    client.publish("humid", serial_read_data(ser))
     return serial_read_data(ser)
 
 
-print("TEST SENSOR")
-print("Do am: ", readMoisture(), "%")
-time.sleep(1)
-print("Nhiet Do: ", readTemperature(), "oC")
-time.sleep(1)
+
 
 m485.modbus485_read()
 
