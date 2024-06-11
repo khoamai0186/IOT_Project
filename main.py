@@ -11,6 +11,10 @@ AIO_FEED_IDs = ["nutnhan1", "nutnhan2"]
 AIO_USERNAME = os.getenv("ADAFRUIT_IO_USERNAME")
 AIO_KEY = os.getenv("ADAFRUIT_IO_KEY")
 
+
+print(f'Using username: {AIO_USERNAME}')
+print(f'Using key: {AIO_KEY[:5]}...')
+
 def connected(client):
     print("Ket noi thanh cong ...")
     for topic in AIO_FEED_IDs:
