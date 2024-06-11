@@ -42,4 +42,3 @@ while True:
     time.sleep(1)
     readTemperature(client, soil_temperature)
     time.sleep(1)
-    pass
