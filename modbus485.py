@@ -41,8 +41,8 @@ class Modbus485:
             print(data_array)
             if len(data_array) >= 7:
                 array_size = len(data_array)
-                value = data_array[array_size - 4] * 256 + data_array[array_size - 4]
-                return value
+                value = data_array[array_size - 4] * 256 + data_array[array_size - 3]
+                return (value / 100)
             else:
                 return 400
         return 400
