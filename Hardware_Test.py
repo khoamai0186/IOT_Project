@@ -38,7 +38,7 @@ def serial_read_data(ser):
             return value
         else:
             return -1
-    return 2
+    return 0
 
 
 soil_temperature =[10, 3, 0, 6, 0, 1, 101, 112]
@@ -47,7 +47,7 @@ def readTemperature(client):
     ser.write(soil_temperature)
     time.sleep(1)
     client.publish("temp", serial_read_data(ser))
-    return serial_read_data(ser)
+    print("Nhiet Do: ", readTemperature(client), "oC")
 
 soil_moisture = [10, 3, 0, 7, 0, 1, 52, 176]
 def readMoisture(client):
@@ -55,7 +55,7 @@ def readMoisture(client):
     ser.write(soil_moisture)
     time.sleep(1)
     client.publish("humid", serial_read_data(ser))
-    return serial_read_data(ser)
+    print("Do am: ", serial_read_data(ser), "%")
 
 
 

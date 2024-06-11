@@ -35,7 +35,7 @@ client.connect()
 client.loop_background()
 
 while True:
-    print("Do am: ", readMoisture(client), "%")
+    readMoisture(client)
     time.sleep(1)
-    print("Nhiet Do: ", readTemperature(client), "oC")
+    readTemperature(client)
     time.sleep(1)
