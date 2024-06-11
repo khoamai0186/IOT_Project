@@ -9,28 +9,28 @@ except:
 
 m485 = modbus485.Modbus485(ser)
 
-relay1_ON = [1, 6, 0, 0, 0, 255, 201, 138]
-relay1_OFF = [1, 6, 0, 0, 0, 0, 137, 202]
+# relay1_ON = [1, 6, 0, 0, 0, 255, 201, 138]
+# relay1_OFF = [1, 6, 0, 0, 0, 0, 137, 202]
 
-relay2_ON = [2, 6, 0, 0, 0, 255, 201, 185]
-relay2_OFF = [2, 6, 0, 0, 0, 0, 137, 249]
+# relay2_ON = [2, 6, 0, 0, 0, 255, 201, 185]
+# relay2_OFF = [2, 6, 0, 0, 0, 0, 137, 249]
 
-m485.modbus485_send(relay1_ON)
-time.sleep(3)
-m485.modbus485_send(relay2_ON)
-time.sleep(3)
+# m485.modbus485_send(relay1_ON)
+# time.sleep(3)
+# m485.modbus485_send(relay2_ON)
+# time.sleep(3)
 
-m485.modbus485_send(relay1_OFF)
-time.sleep(3)
-m485.modbus485_send(relay2_OFF)
-time.sleep(3)
+# m485.modbus485_send(relay1_OFF)
+# time.sleep(3)
+# m485.modbus485_send(relay2_OFF)
+# time.sleep(3)
 
 def serial_read_data(ser):
     bytesToRead = ser.inWaiting()
     if bytesToRead > 0:
         out = ser.read(bytesToRead)
         data_array = [b for b in out]
-        print(data_array)
+        # print(data_array)
         if len(data_array) >= 7:
             array_size = len(data_array)
             value = data_array[array_size - 4] * 256 + data_array[array_size - 3]
@@ -60,5 +60,5 @@ def readMoisture(client):
 
 
 
-m485.modbus485_read()
+# m485.modbus485_read()
 
