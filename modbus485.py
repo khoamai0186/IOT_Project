@@ -61,7 +61,7 @@ class Modbus485:
                 return_array[1] = data_array[6]
                 return_array[2] = data_array[3]
                 return_array[3] = data_array[4]
-                print("Modbus485**", "Raw Dta: ", return_array)
+                print("Modbus485**", "Raw Data: ", return_array)
 
                 [value] = struct.unpack('>f', bytearray(return_array))
                 return value
