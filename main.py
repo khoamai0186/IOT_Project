@@ -13,7 +13,7 @@ AIO_KEY = os.getenv("ADAFRUIT_IO_KEY")
 
 
 print(f'Using username: {AIO_USERNAME}')
-print(f'Using key: {AIO_KEY[:5]}...')
+print(f'Using key: {AIO_KEY}')
 
 def connected(client):
     print("Ket noi thanh cong ...")
