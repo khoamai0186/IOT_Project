@@ -43,6 +43,6 @@ soil_temperature =[10, 3, 0, 6, 0, 1, 101, 112]
 soil_moisture = [10, 3, 0, 7, 0, 1, 52, 176]
 while True:
     readMoisture(client, soil_moisture)
-    time.sleep(1)
+    time.sleep(10)
     readTemperature(client, soil_temperature)
-    time.sleep(1)
+    time.sleep(10)
