@@ -9,8 +9,8 @@ except:
 
 m485 = modbus485.Modbus485(ser)
 
-# relay1_ON = [1, 6, 0, 0, 0, 255, 201, 138]
-# relay1_OFF = [1, 6, 0, 0, 0, 0, 137, 202]
+relay1_ON = [1, 6, 0, 0, 0, 255, 201, 138]
+relay1_OFF = [1, 6, 0, 0, 0, 0, 137, 202]
 
 # relay2_ON = [2, 6, 0, 0, 0, 255, 201, 185]
 # relay2_OFF = [2, 6, 0, 0, 0, 0, 137, 249]
@@ -24,6 +24,16 @@ m485 = modbus485.Modbus485(ser)
 # time.sleep(3)
 # m485.modbus485_send(relay2_OFF)
 # time.sleep(3)
+
+def setDevice1(state):
+    if state == True:
+        m485.modbus485_send(relay1_ON)
+        print("Delay1 ON")
+    else:
+        m485.modbus485_send(relay1_OFF)
+        print("Delay1 OFF")
+    time.sleep(1)
+    m485.modbus485_read()
 
 def serial_read_data(ser):
     bytesToRead = ser.inWaiting()
