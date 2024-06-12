@@ -40,10 +40,10 @@ soil_temperature =[10, 3, 0, 6, 0, 1, 101, 112]
 soil_moisture = [10, 3, 0, 7, 0, 1, 52, 176]
 while True:
     setDevice1(True)
-    time.sleep(2)
+    time.sleep(10)
     setDevice1(False)
-    time.sleep(2)
-    # readMoisture(client, soil_moisture)
-    # time.sleep(10)
-    # readTemperature(client, soil_temperature)
-    # time.sleep(10)
+    time.sleep(10)
+    readMoisture(client, soil_moisture)
+    time.sleep(10)
+    readTemperature(client, soil_temperature)
+    time.sleep(10)
