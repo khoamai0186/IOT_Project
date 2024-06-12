@@ -43,7 +43,7 @@ def serial_read_data(ser):
 
 
 def readTemperature(client, soil_temp):
-    serial_read_data(ser)
+    # serial_read_data(ser)
     ser.write(soil_temp)
     time.sleep(1)
     data1 = serial_read_data(ser)
@@ -52,7 +52,7 @@ def readTemperature(client, soil_temp):
 
 
 def readMoisture(client, soil_mois):
-    serial_read_data(ser)
+    # serial_read_data(ser)
     ser.write(soil_mois)
     time.sleep(1)
     data2 = serial_read_data(ser)
