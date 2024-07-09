@@ -43,9 +43,6 @@ def message(client , feed_id , payload):
     if feed_id == "area3":
         setArea3(payload)
     
-
-
-
 client = MQTTClient(AIO_USERNAME , AIO_KEY)
 client.on_connect = connected
 client.on_disconnect = disconnected
@@ -57,6 +54,8 @@ client.loop_background()
 
 soil_temperature =[10, 3, 0, 6, 0, 1, 101, 112]
 soil_moisture = [10, 3, 0, 7, 0, 1, 52, 176]
+
+
 while True:
     readMoisture(client, soil_moisture)
     time.sleep(10)
